@@ -38,17 +38,6 @@ i18n
           all_new: 'Das alles neu',
           buy_now: 'Jetzt kaufen'
         }
-      },
-      cn: {
-        translation: {
-          description: {
-            part1: 'Ändere <1>src/App.js</1> und speichere um neu zu laden.',
-            part2: 'Lerne React'
-          },
-          limited_edition: 'Limitierte auflage',
-          all_new: 'Das alles neu',
-          buy_now: 'Jetzt kaufen'
-        }
       }
     },
   });
