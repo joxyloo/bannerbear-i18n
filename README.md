@@ -1,0 +1,1 @@
+# bannerbear-i18n
