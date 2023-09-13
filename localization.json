@@ -1,0 +1,18 @@
+{
+  "file_name": "promo_banner.jpg",
+  "api_key": "your_api_key",
+  "template_id": "your_template_id",
+  "translation": {
+    "en": {
+      "pretitle": "Limited edition",
+      "tag": "The all new",
+      "CTA": "Buy now"
+    },
+    "de": {
+      "pretitle": "Limitierte auflage",
+      "tag": "Das alles neu hahaha",
+      "CTA": "Jetzt kaufen"
+    }
+  }
+}
+
