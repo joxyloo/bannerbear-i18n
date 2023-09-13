@@ -10,16 +10,12 @@ const lngs = {
 
 function App() {
   const { t, i18n } = useTranslation();
-  const imgUrl =
-  'https://ondemand.bannerbear.com/simpleurl/ea36j9B13YakMJlwrq/image/title/text/thynk 500X/' +
-  '/tag/text/' + t('limited_edition') +
-  '/pretitle/text/' + t('all_new') +
-  '/CTA/text/' + t('buy_now');
+  
   return (
     <div className='App'>
       <header className='App-header'>
         {/* <img src={logo} className='App-logo' alt='logo' /> */}
-        <img src={`https://banner-localization-output.s3.ap-southeast-1.amazonaws.com/promo_banner-${i18n.resolvedLanguage}.jpg`} className='banner' alt="banner image" />
+        <img src={`https://banner-i18n-output.s3.ap-southeast-1.amazonaws.com/promo_banner-${i18n.resolvedLanguage}.jpg`} className='banner' alt="banner image" />
         <div>
           {Object.keys(lngs).map((lng) => (
             <button

@@ -15,16 +15,16 @@ exports.handler = async (event, context) => {
         const { ContentType } = await s3.headObject(params).promise();
         console.log('CONTENT TYPE:', ContentType);
         
-        if (bucket === 'banner-localization' && ContentType === "application/json") {
+        if (bucket === 'banner-i18n' && ContentType === "application/json") {
             
             // generate image with Bannerbear
             const response = await s3.getObject(params).promise();
             const jsonObj = JSON.parse(response.Body.toString('utf-8'))
-            const localizedImg = await generateImage(jsonObj);
-            console.log(localizedImg);
+            const internationalizedImg = await generateImage(jsonObj);
+            console.log(internationalizedImg);
             
-            // upload to the "banner-localization-output" folder
-            await uploadImg(localizedImg);
+            // upload to the "banner-i18n-output" folder
+            await uploadImg(internationalizedImg);
         }
          
         return ContentType;
@@ -81,14 +81,14 @@ async function generateImage(jsonObj) {
     return imgObj;
 }
 
-async function uploadImg(localizedImg) {
+async function uploadImg(internationalizedImg) {
     
-    for (const index in localizedImg) {
-        const imageBuffer = await makeHttpGetRequest(localizedImg[index].img_url);
+    for (const index in internationalizedImg) {
+        const imageBuffer = await makeHttpGetRequest(internationalizedImg[index].img_url);
         const params_upload = {
             Body: imageBuffer, 
-            Bucket: "banner-localization-output", 
-            Key: localizedImg[index].file_name,
+            Bucket: "banner-i18n-output", 
+            Key: internationalizedImg[index].file_name,
             ContentType: "image/jpeg"
          };
         const upload_res = await s3.putObject(params_upload, function(err, data) {
